@@ -6,8 +6,8 @@ export default function App6() {
   const handleSubmit = () => {
     setProducts([...products, product]);
   };
-  const handleDelete=(task)=>{
-    setProducts(products.filter((value)=>value.name!==task.name));
+  const handleDelete=(name)=>{
+    setProducts(products.filter((value)=>value.name!==name));
   };
   return (
     <div>
@@ -43,7 +43,7 @@ export default function App6() {
           {products.map((value, index) => (
             <li key={index}>
               {value.name}|{value.price}|{value.qty}|{value.price * value.qty}-
-              <button onClick={()=>handleDelete(value)}>Delete</button>
+              <button onClick={()=>handleDelete(value.name)}>Delete</button>
             </li>
           ))}
         </ol>
